@@ -31,5 +31,6 @@ export const ConfigScreen = () => {
       ))}
     </div>
     <Button onClick={() => {startTurn(getTurn())}} style={{height:'4rem'}} disabled={!tables.size}>Démarrer la partie</Button>
+    <p>version {import.meta.env.VITE_APP_VERSION}</p>
   </div>
 }

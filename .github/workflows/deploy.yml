@@ -27,8 +27,6 @@ jobs:
           git config --global user.email "github-actions@github.com"
           git config --global user.name "GitHub Actions"
           npm version patch
-          git add package.json package-lock.json
-          git commit -m "Increment version [skip ci]"
           git push --follow-tags
 
       - name: Build project

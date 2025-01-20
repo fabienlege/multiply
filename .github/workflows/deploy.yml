@@ -24,11 +24,11 @@ jobs:
 
       - name: Increment version
         run: |
-          npm version patch
           git config --global user.email "github-actions@github.com"
           git config --global user.name "GitHub Actions"
-          git add package.json
-          git commit -m "Increment version"
+          npm version patch
+          git add package.json package-lock.json
+          git commit -m "Increment version [skip ci]"
           git push --follow-tags
 
       - name: Build project

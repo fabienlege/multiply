@@ -5,9 +5,10 @@ export interface ButtonProps extends PropsWithChildren{
   fullWidth?: boolean;
   disabled?:boolean
   style?: HTMLAttributes<HTMLButtonElement>['style'];
+  type?: 'submit' | 'button' | 'reset';
 }
 
-export const Button:FC<ButtonProps> = ({children, onClick, fullWidth, style, disabled}) => {
+export const Button:FC<ButtonProps> = ({children, onClick, fullWidth, style, disabled, type}) => {
   const finalStyle: HTMLAttributes<HTMLButtonElement>['style'] = {
     backgroundColor: '#01579B',
     color: '#fff',
@@ -20,5 +21,5 @@ export const Button:FC<ButtonProps> = ({children, onClick, fullWidth, style, dis
 
   disabled && (finalStyle.backgroundColor = '#ccc')
 
-  return <button style={finalStyle} onClick={onClick} disabled={disabled}>{children}</button>
+  return <button style={finalStyle} onClick={onClick} disabled={disabled} type={type}>{children}</button>
 }

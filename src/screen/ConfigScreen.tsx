@@ -5,7 +5,7 @@ import { useAppContext } from '../context/AppContext'
 import { useRandomOpperation } from '../context/game.utils'
 
 export const ConfigScreen = () => {
-  const {tables, disableTable, enableTable, startTurn} = useAppContext()
+  const {tables, disableTable, enableTable, newParty } = useAppContext()
   const {getTurn} = useRandomOpperation()
   
   const handleOnChange = (table: keyof typeof availableTables, checked: boolean) => {
@@ -30,7 +30,7 @@ export const ConfigScreen = () => {
         />
       ))}
     </div>
-    <Button onClick={() => {startTurn(getTurn())}} style={{height:'4rem'}} disabled={!tables.size}>Démarrer la partie</Button>
+    <Button onClick={() => {newParty(getTurn())}} style={{height:'4rem'}} disabled={!tables.size}>Démarrer la partie</Button>
     <p>version {import.meta.env.VITE_APP_VERSION}</p>
   </div>
 }

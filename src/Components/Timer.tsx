@@ -1,10 +1,10 @@
-import { MAX_TURN_DURATIONS } from '../constants/timer';
-import { useAppContext } from '../context/AppContext'
+import { MAX_TURN_DURATIONS } from "../constants/timer";
+import { useAppContext } from "../context/AppContext";
 
 export const Timer = () => {
-  const {timer, finishTurn} = useAppContext();
+	const { timer, finishTurn } = useAppContext();
 
-  if(timer > MAX_TURN_DURATIONS) finishTurn(null);
+	if (timer > MAX_TURN_DURATIONS) finishTurn(null);
 
-  return <progress value={timer} max={MAX_TURN_DURATIONS} />
-}
+	return <progress value={timer} max={MAX_TURN_DURATIONS} />;
+};

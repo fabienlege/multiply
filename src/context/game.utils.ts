@@ -17,7 +17,7 @@ export const useRandomOpperation = (): { getTurn: () => ITurn } => {
     console.log("selectedTable", selectedTable);
     console.log("tables", tables);
     // For table > 10, we limit factor to '6'
-    const maxFactor = selectedTable > 10 ? 4 : availableFactor.length;
+    const maxFactor = selectedTable > 10 ? 5 : availableFactor.length;
     const selectedFactor =
       availableFactor[Math.floor(Math.random() * maxFactor)];
 

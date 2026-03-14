@@ -55,4 +55,3 @@ jobs:
         with:
           zone: ${{ secrets.CLOUDFLARE_ZONE }}
           api_token: ${{ secrets.CLOUDFLARE_TOKEN }}
-          account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

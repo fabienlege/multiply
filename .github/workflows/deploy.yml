@@ -50,7 +50,7 @@ jobs:
           local-dir: ./dist/
           server-dir: /dist/
           clean: true
-      - name: Clear Cloudflare cache
+      - name: Clear Cloudflare caches
         uses: Cyb3r-Jak3/action-cloudflare-cache@v3.0.0
         with:
           zone: ${{ secrets.CLOUDFLARE_ZONE }}

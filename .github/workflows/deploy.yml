@@ -18,7 +18,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: "24"
 
       - name: Install dependencies
         run: npm install
@@ -50,3 +50,13 @@ jobs:
           local-dir: ./dist/
           server-dir: /dist/
           clean: true
+      - name: Clear Cloudflare cache
+        uses: Cyb3r-Jak3/action-cloudflare-cache@<Latest Release>
+        with:
+          # Zone is required by both methods
+          zone: ${{ secrets.CLOUDFLARE_ZONE }}
+
+          # Using API Token
+          api_token: ${{ secrets.CLOUDFLARE_TOKEN }}
+          # Using Account API Token
+          account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
